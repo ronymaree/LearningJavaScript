@@ -1,18 +1,42 @@
-
 // Query and remove
 /* const p = document.querySelector('p')
 p.remove()
  */
 
- //Querry all and remove
- const ps = document.querySelectorAll('p')
+//Querry all and remove
 
- ps.forEach(function (p) {
-    p.textContent="*********"
- })
+// Add a new element
 
- // Add a new element
+const notes = [
+  {
+    title: "My next Vacation",
+    body: "I would like to go to Mauritius",
+  },
+  {
+    title: "Habbits to work on",
+    body: "Exercise. Eating a bit better",
+  },
+  {
+    title: "Office modification",
+    body: "Get a new seat",
+  },
+];
 
- const newParagraph = document.createElement('p')
- newParagraph.textContent = 'This is the new Element from Javascript'
- document.querySelector('body').appendChild(newParagraph)
+document.querySelector("#create-note").addEventListener("click", function (e) {
+  e.target.textContent = "Yoyoyso";
+});
+
+document
+  .querySelector("#delete-all-notes")
+  .addEventListener("click", function (e) {
+    e.target.textContent = "ds";
+  });
+
+document
+  .querySelector("#delete-all-notes")
+  .addEventListener("click", function (e) {
+    let notes = document.querySelectorAll(".note");
+    notes.forEach(function (note) {
+      note.remove();
+    });
+  });
