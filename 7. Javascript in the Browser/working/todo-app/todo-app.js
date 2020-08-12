@@ -41,9 +41,22 @@ endElement.innerHTML = "You have " + count + " tasks left";
 
 document.querySelector("body").appendChild(endElement);
 
-document.querySelector("button").addEventListener("click", function (e) {
-  e.target.textContent = "Yoyoyo";
+document.querySelector("#add-todo").addEventListener("click", function (e) {
+  document
+    .querySelector("#input-todo")
+    .addEventListener("change", function (e) {
+      let inputTexte = e.target.value;
+      return inputTexte;
+      //   console.log(inputTexte);
+    });
+  let inputText = inputTexte;
+  let inputHtml = document.createElement("p");
+  inputHtml.textContent = inputText;
+  console.log(inputText);
+  console.log(inputHtml);
+  document.querySelector("body").appendChild(inputHtml);
 });
+
 // ------------------------------------------------------------------------------------------------------------ SOLUTION
 
 // const incompleteTodos = todos.filter(function (todo) {
